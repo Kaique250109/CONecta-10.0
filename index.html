@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CONecta Aí 10.0 | Projeto Alura</title>
+
+    <meta name="description"
+        content="CONecta Aí 10.0 - Projeto desenvolvido por Kaique Henrique Tavares no curso da Alura.">
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <!-- FUNDO -->
+    <div class="background">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- HEADER -->
+    <header class="topbar">
+
+        <a href="#inicio" class="logo">
+            <span>⚡</span>
+            CONecta Aí
+            <small>10.0</small>
+        </a>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#estudar">Estudar</a>
+            <a href="#trilha">Trilha</a>
+            <a href="#desafios">Desafios</a>
+            <a href="#projeto">Projeto</a>
+        </nav>
+
+        <button id="temaBtn" class="icon-btn" title="Alterar tema">
+            ☀️
+        </button>
+
+    </header>
+
+
+    <!-- HERO -->
+    <main>
+
+        <section id="inicio" class="hero">
+
+            <div class="hero-text">
+
+                <span class="tag">
+                    🚀 PROJETO ALURA • 3º ENSINO MÉDIO
+                </span>
+
+                <h1>
+                    Aprenda.<br>
+                    <span>Pratique.</span><br>
+                    Conecte.
+                </h1>
+
+                <p>
+                    Uma plataforma interativa criada para transformar
+                    o estudo de HTML, CSS, JavaScript e tecnologia
+                    em uma experiência mais divertida.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#estudar" class="btn primary">
+                        Começar a estudar →
+                    </a>
+
+                    <a href="#projeto" class="btn secondary">
+                        Sobre o projeto
+                    </a>
+                </div>
+
+                <div class="proof">
+
+                    <div>
+                        <strong>12+</strong>
+                        <span>flashcards</span>
+                    </div>
+
+                    <div>
+                        <strong>4</strong>
+                        <span>trilhas</span>
+                    </div>
+
+                    <div>
+                        <strong>∞</strong>
+                        <span>possibilidades</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DASHBOARD -->
+            <div class="dashboard-card">
+
+                <div class="dash-top">
+
+                    <div>
+                        <span class="mini-label">SEU PROGRESSO</span>
+                        <h3>Kaique Henrique</h3>
+                    </div>
+
+                    <div class="avatar">
+                        KT
+                    </div>
+
+                </div>
+
+                <div class="level">
+
+                    <div class="level-info">
+                        <span>NÍVEL <b id="nivel">1</b></span>
+                        <span><b id="xp">0</b> XP</span>
+                    </div>
+
+                    <div class="progress">
+                        <span id="xpBar"></span>
+                    </div>
+
+                </div>
+
+                <div class="dash-stats">
+
+                    <div>
+                        <span>📚</span>
+                        <strong id="cardsEstudados">0</strong>
+                        <small>estudados</small>
+                    </div>
+
+                    <div>
+                        <span>🔥</span>
+                        <strong id="streak">1</strong>
+                        <small>dias seguidos</small>
+                    </div>
+
+                    <div>
+                        <span>🏆</span>
+                        <strong id="conquistas">0</strong>
+                        <small>conquistas</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FRASE -->
+        <section class="intro">
+
+            <span class="section-tag">APRENDER É CONECTAR</span>
+
+            <h2>
+                Conhecimento não é só decorar.
+            </h2>
+
+            <p>
+                O CONecta Aí transforma conceitos em prática,
+                desafios e pequenas conquistas.
+            </p>
+
+        </section>
+
+
+        <!-- ESTUDAR -->
+        <section id="estudar" class="study-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-tag">01 • ESTUDAR</span>
+
+                    <h2>
+                        Flashcards inteligentes
+                    </h2>
+
+                    <p>
+                        Clique no card para descobrir a resposta.
+                    </p>
+                </div>
+
+                <div class="study-actions">
+
+                    <button id="embaralharBtn" class="btn secondary">
+                        🔀 Embaralhar
+                    </button>
+
+                    <button id="favoritosBtn" class="btn secondary">
+                        ⭐ Favoritos
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- FILTROS -->
+            <div class="filters">
+
+                <button class="filter active" data-cat="Todos">
+                    Todos
+                </button>
+
+                <button class="filter" data-cat="HTML">
+                    HTML
+                </button>
+
+                <button class="filter" data-cat="CSS">
+                    CSS
+                </button>
+
+                <button class="filter" data-cat="WEB">
+                    Web
+                </button>
+
+                <button class="filter" data-cat="JS">
+                    JavaScript
+                </button>
+
+                <button class="filter" data-cat="Git">
+                    Git
+                </button>
+
+                <input
+                    type="search"
+                    id="pesquisa"
+                    placeholder="🔎 Pesquisar..."
+                >
+
+            </div>
+
+
+            <!-- ÁREA DE ESTUDO -->
+            <div class="study-grid">
+
+                <div class="flashcard-area">
+
+                    <div class="card-counter">
+                        CARD <span id="cardAtual">1</span>
+                        DE <span id="cardTotal">12</span>
+                    </div>
+
+                    <article class="flashcard" id="flashcard">
+
+                        <div class="flash-inner">
+
+                            <div class="flash-front">
+
+                                <span id="cardIcon">🌐</span>
+
+                                <small id="cardCategoria">
+                                    HTML
+                                </small>
+
+                                <h3 id="pergunta">
+                                    O que é HTML?
+                                </h3>
+
+                                <p>
+                                    Clique para virar o card
+                                </p>
+
+                                <div class="flip">
+                                    ↻
+                                </div>
+
+                            </div>
+
+
+                            <div class="flash-back">
+
+                                <span>💡 RESPOSTA</span>
+
+                                <h3 id="resposta">
+                                    HTML é a linguagem de marcação
+                                    usada para estruturar páginas web.
+                                </h3>
+
+                                <p id="dica">
+                                    Dica: pense no HTML como o
+                                    esqueleto de um site.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <div class="card-actions">
+
+                        <button id="anterior" class="round-btn">
+                            ←
+                        </button>
+
+                        <button id="aprenderBtn" class="btn primary">
+                            ✓ Aprendi
+                        </button>
+
+                        <button id="favoritar" class="round-btn">
+                            ☆
+                        </button>
+
+                        <button id="proximo" class="round-btn">
+                            →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SESSÃO -->
+                <aside class="session">
+
+                    <div class="session-header">
+
+                        <div>
+                            <span class="section-tag">
+                                SESSÃO
+                            </span>
+
+                            <h3>Hoje</h3>
+                        </div>
+
+                        <span class="session-time">
+                            ⏱️ 10 min
+                        </span>
+
+                    </div>
+
+                    <div class="session-progress">
+
+                        <div>
+                            <span>Progresso</span>
+                            <b id="progressoTexto">
+                                0%
+                            </b>
+                        </div>
+
+                        <div class="progress">
+                            <span id="studyBar"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="session-list">
+
+                        <div class="session-item done">
+                            <span>✓</span>
+                            <div>
+                                <b>HTML básico</b>
+                                <small>Estrutura da página</small>
+                            </div>
+                        </div>
+
+                        <div class="session-item">
+                            <span>2</span>
+                            <div>
+                                <b>CSS</b>
+                                <small>Estilos e layouts</small>
+                            </div>
+                        </div>
+
+                        <div class="session-item">
+                            <span>3</span>
+                            <div>
+                                <b>Flexbox</b>
+                                <small>Organização dos elementos</small>
+                            </div>
+                        </div>
+
+                        <div class="session-item">
+                            <span>4</span>
+                            <div>
+                                <b>JavaScript</b>
+                                <small>Interatividade</small>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tip">
+                        💡 <b>Dica:</b>
+                        estudar um pouco todos os dias
+                        ajuda a fixar melhor o conteúdo.
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+
+        <!-- TRILHA -->
+        <section id="trilha" class="roadmap">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-tag">
+                        02 • TRILHA
+                    </span>
+
+                    <h2>
+                        Sua jornada de tecnologia
+                    </h2>
+
+                    <p>
+                        Evolua passo a passo.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="roadmap-grid">
+
+                <article class="road-card active">
+
+                    <span class="road-number">01</span>
+                    <span class="road-icon">🌐</span>
+
+                    <h3>HTML</h3>
+
+                    <p>
+                        Aprenda a criar a estrutura
+                        das páginas.
+                    </p>
+
+                    <span class="road-status">
+                        ✓ Em andamento
+                    </span>
+
+                </article>
+
+
+                <article class="road-card">
+
+                    <span class="road-number">02</span>
+                    <span class="road-icon">🎨</span>
+
+                    <h3>CSS</h3>
+
+                    <p>
+                        Dê estilo, identidade e
+                        personalidade ao projeto.
+                    </p>
+
+                    <span class="road-status">
+                        🔒 Próximo
+                    </span>
+
+                </article>
+
+
+                <article class="road-card">
+
+                    <span class="road-number">03</span>
+                    <span class="road-icon">⚡</span>
+
+                    <h3>JavaScript</h3>
+
+                    <p>
+                        Transforme páginas estáticas
+                        em experiências interativas.
+                    </p>
+
+                    <span class="road-status">
+                        🔒 Próximo
+                    </span>
+
+                </article>
+
+
+                <article class="road-card">
+
+                    <span class="road-number">04</span>
+                    <span class="road-icon">🚀</span>
+
+                    <h3>Git & GitHub</h3>
+
+                    <p>
+                        Aprenda a versionar e publicar
+                        seus projetos.
+                    </p>
+
+                    <span class="road-status">
+                        🔒 Próximo
+                    </span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- DESAFIOS -->
+        <section id="desafios" class="challenge-section">
+
+            <div class="challenge-text">
+
+                <span class="section-tag">
+                    03 • DESAFIO
+                </span>
+
+                <h2>
+                    Teste o que você aprendeu.
+                </h2>
+
+                <p>
+                    Responda perguntas rápidas e
+                    ganhe XP.
+                </p>
+
+                <div class="challenge-score">
+                    🏆 Pontuação:
+                    <strong id="pontuacao">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="quiz-card">
+
+                <div class="quiz-top">
+
+                    <span id="quizCategoria">
+                        CSS
+                    </span>
+
+                    <span id="quizNumero">
+                        01 / 04
+                    </span>
+
+                </div>
+
+                <h3 id="quizPergunta">
+                    Qual propriedade do Flexbox
+                    centraliza elementos no eixo principal?
+                </h3>
+
+                <div id="opcoes" class="options"></div>
+
+                <div id="quizResultado" class="quiz-result"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CATEGORIAS -->
+        <section class="categories">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-tag">
+                        04 • BIBLIOTECA
+                    </span>
+
+                    <h2>
+                        Explore os conteúdos
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div class="category-grid">
+
+                <button class="category">
+                    <span>🌐</span>
+                    <b>HTML</b>
+                    <small>3 cards</small>
+                </button>
+
+                <button class="category">
+                    <span>🎨</span>
+                    <b>CSS</b>
+                    <small>4 cards</small>
+                </button>
+
+                <button class="category">
+                    <span>💻</span>
+                    <b>Web</b>
+                    <small>2 cards</small>
+                </button>
+
+                <button class="category">
+                    <span>⚡</span>
+                    <b>JavaScript</b>
+                    <small>1 card</small>
+                </button>
+
+                <button class="category">
+                    <span>🔧</span>
+                    <b>Git</b>
+                    <small>1 card</small>
+                </button>
+
+                <button class="category future">
+                    <span>🚀</span>
+                    <b>Projetos</b>
+                    <small>Em breve</small>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ESTATÍSTICAS -->
+        <section class="analytics">
+
+            <div class="analytics-card">
+
+                <span class="section-tag">
+                    05 • DESEMPENHO
+                </span>
+
+                <h2>
+                    Seu aprendizado em números.
+                </h2>
+
+                <p>
+                    Cada card estudado é um passo
+                    a mais na sua evolução.
+                </p>
+
+                <div class="big-stat">
+
+                    <strong id="bigXp">
+                        0
+                    </strong>
+
+                    <span>
+                        XP acumulado
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="achievement-panel">
+
+                <div class="achievement-head">
+                    <div>
+                        <span class="section-tag">
+                            CONQUISTAS
+                        </span>
+                        <h3>Medalhas desbloqueadas</h3>
+                    </div>
+                </div>
+
+                <div id="achievements" class="achievement-grid"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJETO -->
+        <section id="projeto" class="about-project">
+
+            <div class="project-badge">
+                🏫
+            </div>
+
+            <div>
+
+                <span class="section-tag">
+                    PROJETO ESCOLAR • ALURA
+                </span>
+
+                <h2>
+                    CONecta Aí 10.0
+                </h2>
+
+                <p>
+                    Projeto desenvolvido por <strong>
+                    Kaique Henrique Tavares</strong>,
+                    aluno do 3º ano do Ensino Médio,
+                    a partir dos conhecimentos estudados
+                    no curso da <strong>Alura</strong>.
+                </p>
+
+                <div class="student-info">
+
+                    <div>
+                        <span>👨‍💻 ALUNO</span>
+                        <strong>
+                            Kaique Henrique Tavares
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>🎓 TURMA</span>
+                        <strong>
+                            3º E — Ensino Médio
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>🏫 ESCOLA</span>
+                        <strong>
+                            Alipio de Oliveira e Silva Professor
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>📅 ANO</span>
+                        <strong>
+                            2026
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            ⚡ CONecta Aí <small>10.0</small>
+        </div>
+
+        <p>
+            Projeto desenvolvido por
+            <strong>Kaique Henrique Tavares</strong>
+            • 3º E • 2026
+        </p>
+
+        <p>
+            Projeto baseado nos estudos do curso da
+            <strong>Alura</strong>.
+        </p>
+
+    </footer>
+
+
+    <div id="toast" class="toast">
+        ✓ Alteração salva!
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
